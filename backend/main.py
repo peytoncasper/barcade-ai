@@ -16,7 +16,7 @@ from tweet_battles import TweetBattleGame, TweetBattleAgent
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": ["https://barcade.ai", "http://localhost:3000"]}})
 logging.getLogger('flask_cors').level = logging.DEBUG
 
 @app.route('/init', methods=['GET'])
