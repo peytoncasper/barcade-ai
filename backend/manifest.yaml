@@ -17,6 +17,15 @@ spec:
           image: gcr.io/personal-285812/barcade-backend
           ports:
             - containerPort: 5001
+          env:
+            - name: DB_IP
+              value: 10.104.7.45
+            - name: DB_USERNAME
+              value: postgres
+            - name: DB_PASSWORD
+              value: 7(Jz_L`9HpTWDmxj
+            - name: OPENAI_API_KEY
+              value: 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
 
 ---
 apiVersion: v1

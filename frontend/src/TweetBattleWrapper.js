@@ -23,17 +23,18 @@ const TweetBattleWrapper = () => {
                     setState(json[0])
                 } else if (json.length > 1 && json[1]["type"] === "tweet_battle") {
                     setState(json[1])
-                } else {
-                    setState({
-                        "type": "tweet_battle",
-                        "agent_one_state": 0,
-                        "agent_two_state": 0,
-                        "agent_one_done": false,
-                        "agent_two_done": false,
-                        "agent_one_turns": [],
-                        "agent_two_turns": []
-                    })
                 }
+                // else {
+                //     setState({
+                //         "type": "tweet_battle",
+                //         "agent_one_state": 0,
+                //         "agent_two_state": 0,
+                //         "agent_one_done": false,
+                //         "agent_two_done": false,
+                //         "agent_one_turns": [],
+                //         "agent_two_turns": []
+                //     })
+                // }
             })
         }, 2000);
 

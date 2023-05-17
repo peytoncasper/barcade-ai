@@ -23,17 +23,18 @@ const TowerOfHanoiWrapper = () => {
                     setState(json[0])
                 } else if (json.length > 1 && json[0]["type"] === "towers_of_hanoi") {
                     setState(json[1])
-                } else {
-                    setState({
-                        "type": "towers_of_hanoi",
-                        "agent_one_state": [[1,2,3],[],[]],
-                        "agent_two_state": [[1,2,3],[],[]],
-                        "agent_one_done": false,
-                        "agent_two_done": false,
-                        "agent_one_turns": [],
-                        "agent_two_turns": []
-                    })
                 }
+                // else {
+                //     setState({
+                //         "type": "towers_of_hanoi",
+                //         "agent_one_state": [[1,2,3],[],[]],
+                //         "agent_two_state": [[1,2,3],[],[]],
+                //         "agent_one_done": false,
+                //         "agent_two_done": false,
+                //         "agent_one_turns": [],
+                //         "agent_two_turns": []
+                //     })
+                // }
             })
         }, 2000);
 

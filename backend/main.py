@@ -240,6 +240,7 @@ class Matchmaker():
         self.playable_games = ["towers_of_hanoi", "tweet_battle"]
 
     def run(self):
+        print("Matchmaker Started")
         while True:
             games = get_active_games()
 
