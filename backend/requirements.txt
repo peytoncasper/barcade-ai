@@ -1,0 +1,4 @@
+langchain
+flask
+flask-cors
+psycopg2

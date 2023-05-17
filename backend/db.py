@@ -1,12 +1,13 @@
 import uuid
 
 import psycopg2
+import os
 
 connection_config = {
-    'host': '10.104.7.45',
-    'database': 'postgres',
-    'user': 'postgres',
-    'password': '7(Jz_L`9HpTWDmxj'
+    'host': os.environ["DB_IP"],
+    'database': "postgres",
+    'user': os.environ["DB_USERNAME"],
+    'password': os.environ["DB_PASSWORD"]
 }
 
 def deactivate_game(game_id):

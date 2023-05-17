@@ -4,6 +4,8 @@ import React, {useEffect, useState} from "react";
 import TweetList from "./TweetList";
 
 const TweetBattleWrapper = () => {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
+
     const [state, setState] = useState({
         "type": "tweet_battle",
         "agent_one_state": 0,
@@ -16,7 +18,7 @@ const TweetBattleWrapper = () => {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            fetch('http://127.0.0.1:5001/init').then(data => data.json()).then((json) => {
+            fetch(backendUrl + '/init').then(data => data.json()).then((json) => {
                 if (json.length > 0 && json[0]["type"] === "tweet_battle") {
                     setState(json[0])
                 } else if (json.length > 1 && json[1]["type"] === "tweet_battle") {

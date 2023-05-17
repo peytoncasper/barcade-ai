@@ -3,6 +3,9 @@ import TowerOfHanoi from "./TowersOfHanoi";
 import {useEffect, useState} from "react";
 
 const TowerOfHanoiWrapper = () => {
+
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
+
     let [state, setState] = useState({
         "type": "towers_of_hanoi",
         "agent_one_state": [[1,2,3],[],[]],
@@ -15,7 +18,7 @@ const TowerOfHanoiWrapper = () => {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            fetch('http://127.0.0.1:5001/init').then(data => data.json()).then((json) => {
+            fetch(backendUrl + '/init').then(data => data.json()).then((json) => {
                 if(json.length > 0 && json[0]["type"] === "towers_of_hanoi") {
                     setState(json[0])
                 } else if (json.length > 1 && json[0]["type"] === "towers_of_hanoi") {
