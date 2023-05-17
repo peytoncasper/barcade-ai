@@ -1,1 +1,5 @@
 .idea/
+
+**/venv
+backend/localhost.crt
+backend/localhost.key
